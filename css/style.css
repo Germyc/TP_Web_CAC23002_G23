@@ -8,11 +8,11 @@
   display: grid;
   gap: 5px;
   background-color: white;
-  grid-template-rows: 80px 0.7fr 1fr 1fr 1fr 80px;
+  grid-template-rows: 80px 1fr 4fr 5fr 4fr 80px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'header header    '
-    'port port        '
+    'port   port      '
     'carousel carousel'
     'main     main    '
     'main     main    '
@@ -34,21 +34,10 @@
   ;
 }
 
-header {
-  grid-area: header;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 84px;
-  background: #fff;
-  box-shadow: 0 10px 20px -22px black;
-  z-index: 2;
-}
-
 .portada {
   grid-area: port;
-  margin-top: -80px;
+  /* margin-top: -80px; */
+
 }
 
 .main {
@@ -61,6 +50,7 @@ header {
 .carrusel {
   grid-area: carousel;
   width: 80%;
+  margin: 0;
   margin-left: 10%;
   position: relative;
   display: inline-block;
@@ -98,7 +88,7 @@ header {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -142,28 +132,32 @@ header {
 }
 
 footer {
+  margin-top: 10%;
   grid-area: footer;
   background-color: #ffffff;
   color: #fff;
-  margin-top: 10%;
   height: 30px;
-  display: flex;
+  display:flex;
   text-align: center;
   padding: 28px;
   justify-content: center;
   font-size: 16px;
-  box-shadow: 0 15px 30px 15px black;
+  box-shadow: 3px -3px 15px rgba(0, 0, 0, 0.466);
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 2;
+  
 }
 
 
-/* tablet */
+/* tablet*/
+
 @media screen and (max-width: 1000px) {
+  
   .contenedorBody {
-    grid-template-rows: 80px 0.2fr 0.1fr 1fr 1fr 80px;
+    grid-template-rows: 80px 1fr 3fr 10fr 10fr 80px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       'header header    '
@@ -190,9 +184,9 @@ footer {
   .container {
     width: 100%;
   }
-}
+} 
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 640px) {
   .contenedorBody {
     grid-template-rows: 80px 0.05fr 1fr 1fr 80px;
     grid-template-columns: 1fr 1fr;
@@ -229,21 +223,23 @@ footer {
   }
 
   footer {
+    margin-top: 10%;
     grid-area: footer;
     background-color: #ffffff;
     color: #fff;
-    height: 300px;
-    display: flex;
+    height: 30px;
+    display:flex;
     text-align: center;
     padding: 28px;
     justify-content: center;
     font-size: 16px;
-    box-shadow: 0 15px 30px 15px black;
-    z-index: 2;
+    box-shadow: 3px -3px 15px rgba(0, 0, 0, 0.466);
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 2;
+    
   }
 }
 
@@ -332,7 +328,7 @@ footer a:hover {
   ;
 }
 /* Estilos del encabezado */
-header h1 {
+/* header h1 {
   margin: 0;
 }
 
@@ -409,20 +405,21 @@ header {
 
 header.hide {
   transform: translateY(-100%);
-}
+} */
 
 .container-cover {
   width: 100%;
-  height: 100%;
+  height: auto;
   position: relative;
-  top: 80px;
-  background-image: url(img/Portada.jpg);
+  /* top: 80px; */
+  background-image:url(../img/Portada.png); 
+  /* background-image: url(img/Portada.jpg); */
   background-position: center;
-  background-size: cover;
+  background-size:contain;
   background-repeat: no-repeat;
 }
 
-.container-cover:before {
+/* .container-cover:before {
   content: '';
   width: 100%;
   height: 100%;
@@ -430,11 +427,10 @@ header.hide {
   position: absolute;
   top: 0;
   left: 0;
-}
+} */
 
 .container-info-cover {
-  max-width: 800px;
-  height: 500px;
+  height: 100% ;
   margin: auto;
   text-align: center;
   display: flex;
@@ -446,14 +442,16 @@ header.hide {
 }
 
 .container-info-cover h1 {
-  font-size: 60px;
-  font-weight: 500;
+  font-size: 6vw;
+  font-weight: 800;
+  text-shadow: 2px 2px 2px #05101b;
   color: #fff;
   margin-bottom: 20px;
 }
 
 .container-info-cover p {
   color: #fff;
-  font-size: 20px;
-  font-weight: 300;
+  font-size: 2.5vw;
+  text-shadow: 2px 2px 2px #183653;
+  font-weight: 500;
 }
