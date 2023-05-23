@@ -88,7 +88,7 @@
 .next {
   cursor: pointer;
   position: absolute;
-  /* top: 50%; */
+  top: 50%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -150,8 +150,6 @@ footer {
   z-index: 2;
   
 }
-
-
 /* tablet*/
 
 @media screen and (max-width: 1000px) {
@@ -194,7 +192,7 @@ footer {
       'header header    '
       'carousel carousel'
       'main    main     '
-      'marg    marg     '
+      'main    main     '
       'footer footer    '
     ;
     font-family: 'Source Sans Pro', sans-serif;
@@ -242,7 +240,6 @@ footer {
     
   }
 }
-
 img{
   border-radius: 10px;
 }

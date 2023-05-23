@@ -28,11 +28,9 @@ header .imglogo {
     transform: scale(1.2);
   }
 
-
 header h1 {
     margin: 0;
   }
-  
   .header-content {
     max-width: 1200px;
     margin: auto;
@@ -78,7 +76,9 @@ header h1 {
     align-items: center;
     position: relative;
   }
-  
+  .menu nav ul li.ocultar{
+    display: none;
+  }
   .menu-selected:before {
     content: '';
     width: 100%;
@@ -110,10 +110,16 @@ header h1 {
   header.hide {
     transform: translateY(-100%);
   }
+  #menuH, #menu-check {
+    display: none;
+  }
   
   @media screen and (max-width: 640px) {
-    header .imglogo{
+    /* header .imglogo{
       display:none;
+    } */
+    .menu.hide {
+      display: none;
     }
     .menu nav ul li {
       height: 100%;
@@ -122,5 +128,89 @@ header h1 {
       justify-content:baseline;
       align-items:center;
       position: relative;
+    }
+    header div.menu{
+      display: flex;
+      place-content: space-between;
+    }
+    #menu-check:not(:checked) ~ div.menu nav {/*////////////////////////////////////*/
+      display: none;
+    }
+    #menu-check:checked ~ div.menu nav {
+      display: block;
+    }
+
+    #menuH {
+      display: block;
+      color: #46a2fd;
+      background-color: white;
+      font-size: 1.8em;
+      font-weight: bold;
+      border: 2px solid #46a2fd86;
+      border-radius: 0.3em;
+      position: absolute;
+      right: 0.5em;
+      top: 0.5em;
+      max-height: 800px;
+      transition: 0.8s;
+      z-index: 9999;
+    }
+    #menuH:hover{
+      color:white;/*#2c649c*/
+      background-color: #46a2fd;
+    }
+    #menuH-cerrar{
+      display: none;
+    }
+    #menu-check:checked ~ label #menuH-abrir {
+      display: none;
+    }
+    #menu-check:checked ~ label #menuH-cerrar {
+      display: block;
+    }
+    .menu-selected:before {
+      background: none;
+      
+    }
+    .menu .text-menu-selected {
+      color: white;
+      font-weight: bold;
+    }
+    
+    header div.header-content div.menu nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 0.7em;
+      padding-top: 2em;
+      padding-right: 1.5em;
+      color: white;
+    }
+    
+    header div.header-content div.menu nav ul li {
+      height: 110%;
+      width: 200px;
+      text-align: center;
+      padding-right: 30px;
+      top:-25px;
+      left: 50px;
+      background-color:rgb(0, 0, 0);
+      opacity: 0.8;
+      transition: 0.8s;
+    }
+    
+    header div.menu nav ul a {
+      color: white;
+    }
+    header div.menu nav ul, header div.menu nav ul li {
+      display: block;
+      text-align: right;
+    }
+    .menu nav ul li.ocultar{
+      display:block;
+      border-top-left-radius: 1em;
+    }
+    .menu nav ul li.ult{
+      border-bottom-left-radius: 1em;
     }
   }
